@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders with props 1`] = `
+<aside
+  className="todolist_form_error"
+>
+  <ul
+    className="todolist_form_error_list"
+  >
+    <li>
+      Message 1
+    </li>
+    <li>
+      Message 2
+    </li>
+  </ul>
+</aside>
+`;

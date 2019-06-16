@@ -13,10 +13,14 @@ function ValidationError(props) {
     return (
         <aside className='todolist_form_error'>
             <ul className='todolist_form_error_list'>
-                {messages.map(m => <li>{m}</li>)}
+                {messages.map((m, i) => <li key={i}>{m}</li>)}
             </ul>
         </aside>
     )
+}
+
+ValidationError.defaultProps = {
+    errorMessages: {},
 }
 
 export default ValidationError;

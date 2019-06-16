@@ -13,4 +13,11 @@ function TodoItem(props) {
     )
 }
 
+TodoItem.defaultProps = {
+    title: '',
+    dateAdded: '',
+    dateDue: '',
+    note: ''
+}
+
 export default TodoItem;

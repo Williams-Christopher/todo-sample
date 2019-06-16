@@ -120,8 +120,6 @@ class Input extends React.Component {
     }
 
     render() {
-        //const contextType = TodoContext;
-
         return (
             <section>
                 {!this.state.isFormValid ? <ValidationError errorMessages={this.state.errorMessages} /> : ''}
