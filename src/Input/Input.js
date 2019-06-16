@@ -17,6 +17,10 @@ class Input extends React.Component {
             errorDueDate: '',
         }
     }
+
+    titleInput = React.createRef();
+    dateInput = React.createRef();
+    noteInput = React.createRef();
     
     static contextType = TodoContext;
 
@@ -108,6 +112,11 @@ class Input extends React.Component {
         
         // pass new todo item callback
         this.context.addItem(newTodoItem);
+
+        // reset form values
+        this.titleInput.current.value = '';
+        this.dateInput.current.value = '';
+        this.noteInput.current.value = '';
     }
 
     render() {
@@ -118,13 +127,13 @@ class Input extends React.Component {
                 {!this.state.isFormValid ? <ValidationError errorMessages={this.state.errorMessages} /> : ''}
                 <form className='todolist_input_form' onSubmit={e => this.formHandleSubmit(e)}>
                     <label htmlFor='todo-title'>title: </label>
-                    <input type='text' id='todo-title' name='todo-title' required onChange={e => this.titleOnChangeHandler(e.target.value)}/>
+                    <input type='text' id='todo-title' name='todo-title' required ref={this.titleInput} onChange={e => this.titleOnChangeHandler(e.target.value)}/>
                     <br />
                     <label htmlFor='todo-due-date'>Due date: </label>
-                    <input type='date' id='todo-due-date' name='todo-due-date' onChange={e => this.dueDateOnChangeHandler(e.target.value)} />
+                    <input type='date' id='todo-due-date' name='todo-due-date' ref={this.dateInput} onChange={e => this.dueDateOnChangeHandler(e.target.value)} />
                     <br />
                     <label htmlFor='todo-note'>Note: </label>
-                    <textarea id='todo-note' name='todo-note' onChange={e => this.noteOnChangeHandler(e.target.value)}/>
+                    <textarea id='todo-note' name='todo-note' ref={this.noteInput} onChange={e => this.noteOnChangeHandler(e.target.value)}/>
                     <br />
                     <button type='submit' disabled={!this.state.isFormValid}>Create</button>
                 </form>
