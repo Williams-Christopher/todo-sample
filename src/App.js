@@ -1,9 +1,11 @@
 import React from 'react';
 
 import td from './TestData';
+import TodoContext from './TodoContext';
+import Header from './Header/Header';
 
 import './App.css';
-import TodoContext from './TodoContext';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -27,9 +29,11 @@ class App extends React.Component {
     }
 
     return (
-      <TodoContext.Provider value={contextValue}>
-        <p>Placeholder</p>
-      </TodoContext.Provider>
+      <div className='App'>
+        <TodoContext.Provider value={contextValue}>
+          <Header />
+        </TodoContext.Provider>
+      </div>
     )
   }
 }
