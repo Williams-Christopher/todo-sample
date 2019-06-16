@@ -1,12 +1,37 @@
 import React from 'react';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <p>Placeholder</p>
-    </div>
-  );
+import td from './TestData';
+
+import './App.css';
+import TodoContext from './TodoContext';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todoList: [],
+    }
+  }
+
+  componentDidMount() {
+    // get the TestDat into state
+    this.setState({
+      todoList: td,
+    });
+  }
+
+  render() {
+    // place state into context
+    const contextValue = {
+      todoList: this.state.todoList,
+    }
+
+    return (
+      <TodoContext.Provider value={contextValue}>
+        <p>Placeholder</p>
+      </TodoContext.Provider>
+    )
+  }
 }
 
 export default App;
