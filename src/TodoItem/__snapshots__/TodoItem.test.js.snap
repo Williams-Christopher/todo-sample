@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render with content as expected 1`] = `
+<article
+  className="todolist_item"
+>
+  <p
+    className="todolist_title"
+  >
+    Test item
+  </p>
+  <p
+    className="todolist_date"
+  >
+    Date added: 
+    <time>
+      2019-01-01T00:00:00Z
+    </time>
+  </p>
+  <p
+    className="todolist_date"
+  >
+    Date due: 
+    <time>
+      2019-01-02T23:59:59Z
+    </time>
+  </p>
+  <p
+    className="todoitem_note"
+  >
+    This is a test note
+  </p>
+</article>
+`;
