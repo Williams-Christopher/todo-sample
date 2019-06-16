@@ -25,11 +25,60 @@ exports[`should render with content as expected 1`] = `
       2019-01-02T23:59:59Z
     </time>
   </p>
-  <p
+  <div
     className="todoitem_note"
   >
-    This is a test note
+    <p>
+      This is a test note
+    </p>
+  </div>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Delete
+  </button>
+</article>
+`;
+
+exports[`should render with content with linebreaksas expected 1`] = `
+<article
+  className="todolist_item"
+>
+  <p
+    className="todolist_title"
+  >
+    Test item
   </p>
+  <p
+    className="todolist_date"
+  >
+    Date added: 
+    <time>
+      2019-01-01T00:00:00Z
+    </time>
+  </p>
+  <p
+    className="todolist_date"
+  >
+    Date due: 
+    <time>
+      2019-01-02T23:59:59Z
+    </time>
+  </p>
+  <div
+    className="todoitem_note"
+  >
+    <p>
+      This is a test note
+    </p>
+    <p>
+      with
+    </p>
+    <p>
+      linebreaks.
+    </p>
+  </div>
   <button
     onClick={[Function]}
     type="button"

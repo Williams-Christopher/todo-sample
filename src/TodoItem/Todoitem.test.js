@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import TodoItem from './TodoItem';
 
-const props = {
+const testProps = {
     id: '123456789',
     title: 'Test item',
     note: 'This is a test note',
+    noteWithBreaks: 'This is a test note\nwith\nlinebreaks.',
     dateAdded: '2019-01-01T00:00:00Z',
     dateDue: '2019-01-02T23:59:59Z'
 }
@@ -18,6 +19,11 @@ it('should render without crashing', () => {
 });
 
 it('should render with content as expected', () => {
-    const tree = renderer.create(<TodoItem id={props.id} title={props.title} note={props.note} dateAdded={props.dateAdded} dateDue={props.dateDue} />).toJSON();
+    const tree = renderer.create(<TodoItem id={testProps.id} title={testProps.title} dateAdded={testProps.dateAdded} dateDue={testProps.dateDue} note={testProps.note} />).toJSON();
+    expect(tree).toMatchSnapshot();
+})
+
+it('should render with content with linebreaksas expected', () => {
+    const tree = renderer.create(<TodoItem id={testProps.id} title={testProps.title} dateAdded={testProps.dateAdded} dateDue={testProps.dateDue} note={testProps.noteWithBreaks} />).toJSON();
     expect(tree).toMatchSnapshot();
 })
