@@ -29,11 +29,17 @@ class App extends React.Component {
     this.setState({todoList: newTodoList});
   }
 
+  removeTodoItem = itemId => {
+    let newTodoList = this.state.todoList.filter(ti => ti.id !== itemId);
+    this.setState({todoList: newTodoList});
+  }
+
   render() {
     // place state into context
     const contextValue = {
       todoList: this.state.todoList,
       addItem: this.addNewTodoItem,
+      deleteItem: this.removeTodoItem
     }
 
     return (

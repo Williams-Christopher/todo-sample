@@ -30,5 +30,11 @@ exports[`should render with content as expected 1`] = `
   >
     This is a test note
   </p>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Delete
+  </button>
 </article>
 `;

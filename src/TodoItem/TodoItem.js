@@ -9,15 +9,18 @@ function TodoItem(props) {
             <p className='todolist_date'>Date added: <time>{props.dateAdded}</time></p>
             <p className='todolist_date'>Date due: <time>{props.dateDue}</time></p>
             <p className='todoitem_note'>{props.note}</p>
+            <button type='button' onClick={e => props.deleteItem(props.id)}>Delete</button>
         </article>
     )
 }
 
 TodoItem.defaultProps = {
+    id: '',
     title: '',
     dateAdded: '',
     dateDue: '',
-    note: ''
+    note: '',
+    deleteItem: () => {}
 }
 
 export default TodoItem;

@@ -17,10 +17,12 @@ function TodoList() {
                             <li key={t.id}>
                                 <TodoItem
                                     key={t.id}
+                                    id={t.id}
+                                    title={t.title}
                                     dateAdded={t.dateAdded}
                                     dateDue={t.dateDue}
-                                    title={t.title}
                                     note={t.note}
+                                    deleteItem={context.deleteItem}
                                 />
                             </li> 
                         )
