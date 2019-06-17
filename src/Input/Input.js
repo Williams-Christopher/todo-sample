@@ -52,7 +52,7 @@ class Input extends React.Component {
 
         // title cannot be empty
         if(value === '') {
-            messages.errortitle = 'title field can not be empty';
+            messages.errortitle = 'Title can not be empty';
             isTitleValid = false;
         } else {
             messages.errortitle = '';
