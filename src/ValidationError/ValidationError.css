@@ -1,11 +1,4 @@
 .todolist_form_error {
-    width: 80%;
-    border: 1px solid red;
-    margin: 10px auto;
-}
-
-.todolist_form_error_list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 5px 0;
+   color: red;
 }

@@ -52,10 +52,10 @@ class Input extends React.Component {
 
         // title cannot be empty
         if(value === '') {
-            messages.errortitle = 'Title can not be empty';
+            messages.errorTitle = 'Title can not be empty';
             isTitleValid = false;
         } else {
-            messages.errortitle = '';
+            messages.errorTitle = '';
             isTitleValid = true;
         }
 
@@ -124,11 +124,13 @@ class Input extends React.Component {
             <section>
                 {!this.state.isFormValid ? <ValidationError errorMessages={this.state.errorMessages} /> : ''}
                 <form className='todolist_input_form' onSubmit={e => this.formHandleSubmit(e)}>
-                    <label htmlFor='todo-title'>title: </label>
+                    <label htmlFor='todo-title'>Title: </label>
                     <input type='text' id='todo-title' name='todo-title' required ref={this.titleInput} onChange={e => this.titleOnChangeHandler(e.target.value)}/>
+                    <ValidationError hasError={!this.state.isTitleValid} message={this.state.errorMessages.errorTitle} />
                     <br />
                     <label htmlFor='todo-due-date'>Due date: </label>
                     <input type='date' id='todo-due-date' name='todo-due-date' ref={this.dateInput} onChange={e => this.dueDateOnChangeHandler(e.target.value)} />
+                    <ValidationError hasError={!this.state.isDueDateValid} message={this.state.errorMessages.errorDueDate} />
                     <br />
                     <label htmlFor='todo-note'>Note: </label>
                     <textarea id='todo-note' name='todo-note' ref={this.noteInput} onChange={e => this.noteOnChangeHandler(e.target.value)}/>

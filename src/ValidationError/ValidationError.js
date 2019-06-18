@@ -3,29 +3,23 @@ import PropTypes from 'prop-types';
 import './ValidationError.css';
 
 function ValidationError(props) {
-    let messageKeys = Object.keys(props.errorMessages);
-    let messages = [];
-    for (let i = 0; i < messageKeys.length; i++) {
-        if (props.errorMessages[messageKeys[i]] !== '') {
-            messages.push(props.errorMessages[messageKeys[i]]);
-        }
+    if (props.hasError && props.message) {
+        return (
+            <p className='todolist_form_error'>{props.message}</p>
+        )
+    } else {
+        return null;
     }
-
-    return (
-        <aside className='todolist_form_error'>
-            <ul className='todolist_form_error_list'>
-                {messages.map((m, i) => <li key={i}>{m}</li>)}
-            </ul>
-        </aside>
-    )
 }
 
 ValidationError.defaultProps = {
-    errorMessages: {},
+    hasError: false,
+    message: '',
 }
 
 ValidationError.propTypes = {
-    errorMessages: PropTypes.object,
+    hasError: PropTypes.bool,
+    message: PropTypes.string,
 }
 
 export default ValidationError;
