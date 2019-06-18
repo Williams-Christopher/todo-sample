@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ValidationError.css';
 
 function ValidationError(props) {
@@ -21,6 +22,10 @@ function ValidationError(props) {
 
 ValidationError.defaultProps = {
     errorMessages: {},
+}
+
+ValidationError.propTypes = {
+    errorMessages: PropTypes.object,
 }
 
 export default ValidationError;

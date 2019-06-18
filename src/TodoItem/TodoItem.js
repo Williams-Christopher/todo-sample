@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './TodoItem.css';
 
@@ -23,6 +24,16 @@ TodoItem.defaultProps = {
     dateDue: '',
     note: '',
     deleteItem: () => {}
+}
+
+TodoItem.propTypes = {
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    dateAdded: PropTypes.string.isRequired,
+    dateDue: PropTypes.string.isRequired,
+    note: PropTypes.string,
+    deleteItem: PropTypes.func.isRequired,
+
 }
 
 export default TodoItem;
