@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
+import {shallow} from 'enzyme';
 import TodoItem from './TodoItem';
 
 const testProps = {
@@ -26,4 +27,11 @@ it('should render with content as expected', () => {
 it('should render with content with linebreaksas expected', () => {
     const tree = renderer.create(<TodoItem id={testProps.id} title={testProps.title} dateAdded={testProps.dateAdded} dateDue={testProps.dateDue} note={testProps.noteWithBreaks} />).toJSON();
     expect(tree).toMatchSnapshot();
+})
+
+it('should assert that the delete button was clicked', () => {
+    const refFunction = jest.fn();
+    const wrapper = shallow(<TodoItem {...testProps} deleteItem={refFunction} />);
+    wrapper.find('button').simulate('click');
+    expect(refFunction).toHaveBeenCalled();
 })

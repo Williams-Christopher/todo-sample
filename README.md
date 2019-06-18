@@ -6,11 +6,11 @@ This project focused on functionality rather than presentation and was written t
 - [X] Context provided then consumed in class a function compoents
 - [X] State
 - [X] Default Props
-- [ ] Testing
+- [X] Testing
     - [X] jest
-    - [ ] enzyme
+    - [X] enzyme
     - [X] react-test-renderer
-- [ ] PropTypes
+- [X] PropTypes
 - [X] Controlled input form
 - [X] React refs
 
